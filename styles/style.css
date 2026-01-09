@@ -13,4 +13,426 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font-main), sans-serif;
+  font-variation-settings: "wght" var(--font-main-paragraph);
+  background-image: repeating-linear-gradient(
+      to right,
+      #d3d3d3,
+      transparent 2px
+    ),
+    repeating-linear-gradient(to bottom, #d3d3d3, transparent 2px),
+    linear-gradient(to bottom, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
+  background-position: fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header,
+.main__card {
+  inline-size: var(--width-block);
+  background-color: white;
+  outline: 2px solid #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-block-start: 100px;
+  min-height: 368px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.header__title {
+  font-family: var(--font-accent);
+}
+
+.header__title-first {
+  font-size: clamp(3.063rem, 2.7109rem + 1.5023vw, 4.063rem);
+  text-transform: uppercase;
+}
+.header__title-second {
+  font-size: clamp(0.875rem, 0.6768rem + 0.8458vw, 1.438rem);
+  text-transform: uppercase;
+}
+
+.main {
+  margin-block-start: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 53px;
+}
+
+.card__title {
+  font-size: 18px;
+  font-variation-settings: "wght" var(--font-main-title);
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  padding-block-start: 4px;
+  padding-block-end: 4px;
+}
+
+.card__image {
+  position: relative;
+  max-block-size: 696px;
+}
+.card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card__image-text {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  font-weight: 400;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  text-transform: uppercase;
+  mix-blend-mode: hard-light;
+  color: rgba(0, 0, 0, 0.6);
+  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+}
+
+@supports (
+  (text-stroke: 1px var(--text-stroke)) or
+    (-webkit-text-stroke: 1px var(--text-stroke))
+) {
+  .card__image-text {
+    -webkit-text-stroke: 1px var(--text-stroke);
+    text-stroke: 1px var(--text-stroke);
+    text-shadow: none;
+  }
+}
+
+.card__description {
+  padding-inline: 25px;
+  font-size: 18px;
+}
+
+.card__description-purpose {
+  padding-block-start: 29px;
+}
+
+.card__description-memories {
+  padding-block-start: 24px;
+}
+.card__button {
+  align-self: flex-end;
+  justify-self: flex-end;
+  margin-block-start: 23px;
+  margin-inline-end: 29px;
+  margin-block-end: 25px;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.button__text {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  font-size: 14px;
+  padding: 13px 30px;
+}
+
+.card__icon-button {
+  width: 45px;
+  height: 39px;
+  background-color: transparent;
+  padding: 1px;
+  border-color: transparent;
+}
+
+#dialog-id {
+  width: clamp(341px, 80vw, 353px);
+  height: 191px;
+  padding: 27px;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.7);
+}
+
+dialog {
+  display: flex;
+  flex-direction: column;
+}
+
+dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.dialog__modal {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dialog__title {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 150%;
+}
+
+@media (width <= 375px) {
+  .header {
+    min-height: 327px;
+  }
+  .main {
+    row-gap: 53px;
+    margin-block-start: 102px;
+  }
+
+  .main .main__card:nth-child(1) .card__description-purpose {
+    padding-block-start: 20px;
+  }
+
+  .main .main__card:nth-child(1) .card__description-memories {
+    padding-block-start: 43px;
+  }
+  .main .main__card:nth-child(2) .card__description-purpose {
+    padding-block-start: 14px;
+  }
+
+  .main .main__card:nth-child(2) .card__description-memories {
+    padding-block-start: 22px;
+  }
+
+  .main .main__card:nth-child(3) .card__description-purpose {
+    padding-block-start: 17px;
+  }
+
+  .main .main__card:nth-child(3) .card__description-memories {
+    padding-block-start: 23px;
+  }
+
+  .main .main__card:nth-child(4) .card__description-purpose {
+    padding-block-start: 15px;
+  }
+
+  .main .main__card:nth-child(4) .card__description-memories {
+    padding-block-start: 22px;
+  }
+
+  .main .main__card:nth-child(5) .card__description-purpose {
+    padding-block-start: 15px;
+  }
+
+  .main .main__card:nth-child(5) .card__description-memories {
+    padding-block-start: 21px;
+  }
+  .main .main__card:nth-child(6) .card__description-purpose {
+    padding-block-start: 18px;
+  }
+
+  .main .main__card:nth-child(6) .card__description-memories {
+    padding-block-start: 23px;
+  }
+
+  .main .main__card:nth-child(7) .card__description-purpose {
+    padding-block-start: 17px;
+  }
+
+  .main .main__card:nth-child(7) .card__description-memories {
+    padding-block-start: 22px;
+  }
+
+  .main .main__card:nth-child(8) .card__description-purpose {
+    padding-block-start: 14px;
+  }
+
+  .main .main__card:nth-child(8) .card__description-memories {
+    padding-block-start: 43px;
+  }
+
+  .button__footer {
+    flex-direction: column;
+    gap: 7.5px;
+  }
+  .button__footer svg {
+    width: 28px;
+  }
+  .dialog__modal svg {
+    width: 90px;
+  }
+  .dialog__modal {
+    padding-inline-start: 8px;
+  }
+}
+
+.card__image-second {
+  filter: brightness(50%);
+}
+
+.card__image-third {
+  filter: brightness(150%);
+}
+
+.card__image-fourth {
+  filter: contrast(70%);
+}
+
+.card__image-fifth {
+  filter: blur(0.2rem);
+}
+
+.card__image-sixth {
+  filter: sepia(50%);
+}
+
+.card__image-seventh {
+  filter: saturate(20%);
+}
+.card__image-eighth {
+  filter: contrast(102%) brightness(66%)
+}
+
+/* Анимация кнопок */
+
+.button__footer {
+  background: #fff;
+  color: #fff;
+  border: 2px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 17px 20px;
+  gap: 3.5px;
+  margin-block-start: 50px;
+  margin-block-end: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card__like-button {
+  border: 2px solid #000;
+  background-color: #fff;
+  color: #fff;
+  width: 127px;
+  height: 37px;
+  position: relative;
+  overflow: hidden;
+}
+.button__footer:focus,
+.card__like-button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 #000;
+  transition: box-shadow 0.3s ease;
+}
+
+.button__footer::before,
+.card__like-button::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background: #000;
+  position: absolute;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.button__footer:hover::before,
+.card__like-button:hover::before {
+  transform: translateX(0%);
+}
+.button__footer span,
+.card__like-button span {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  mix-blend-mode: difference;
+}
+
+.button__footer svg {
+  width: 21px;
+  mix-blend-mode: difference;
+  flex-shrink: 0;
+}
+
+.dialog__button {
+  width: clamp(261px, 100%, 293px);
+  height: 38px;
+  margin-block-start: 30px;
+  margin-block-end: 0px;
+  text-transform: uppercase;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+.card__icon-button:focus-visible {
+  border: 2px solid #000;
+  transition: border-color 0.3s ease;
+}
+
+/* Код для анимации сердца */
+
+.sparks {
+  opacity: 0;
+}
+
+.contour {
+  transition: fill 0.1s 0s linear;
+}
+
+.core {
+  transition: fill 0.3s 0.03s linear;
+}
+
+.main-body {
+  transition: fill  0.3s 0s linear;
+}
+
+.like-icon {
+  transform-origin: center;
+}
+
+.like-icon:hover .core {
+  fill: var(--contour-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--contour-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .heart {
+  animation: increase 0.3s 0.16s ease-in;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-appear 0.3s 0.3s ease-in;
 }

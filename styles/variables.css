@@ -1,1 +1,11 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --font-accent: 'Press Start 2P';
+    --font-main: 'Inter';
+    --font-main-paragraph: 410;
+    --font-main-title: 715;
+    --width-block: clamp(320px, 100%, 700px);
+    --text-stroke: rgba(255, 255, 255, 0.6);
+    --contour-color: #000;
+    --animation-fill-color: red;
+}
