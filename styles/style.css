@@ -115,14 +115,14 @@
 }
 
 .card__description {
-    font-size: 18px;
-    line-height: 21px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 25px;
-    padding-block-start: 30px;
-    padding-inline: 25px;
-    padding-block-end: 25px;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  padding-block-start: 30px;
+  padding-inline: 25px;
+  padding-block-end: 25px;
 }
 
 .card__button {
@@ -272,12 +272,12 @@ dialog:not([open]) {
 }
 
 .dialog__button {
-    height: 38px;
-    margin-block-start: 30px;
-    margin-block-end: 0px;
-    text-transform: uppercase;
-    margin-inline-start: 10px;
-    margin-inline-end: 10px;
+  height: 38px;
+  margin-block-start: 30px;
+  margin-block-end: 0px;
+  text-transform: uppercase;
+  margin-inline-start: 10px;
+  margin-inline-end: 10px;
 }
 
 .card__icon-button:focus {
