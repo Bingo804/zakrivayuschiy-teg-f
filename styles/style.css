@@ -50,11 +50,11 @@
   font-family: var(--font-accent);
 }
 
-.header__title-first {
+.header__title-primary {
   font-size: clamp(3.063rem, 2.7109rem + 1.5023vw, 4.063rem);
   text-transform: uppercase;
 }
-.header__title-second {
+.header__title-subtitle {
   font-size: clamp(0.875rem, 0.6768rem + 0.8458vw, 1.438rem);
   text-transform: uppercase;
 }
@@ -244,10 +244,13 @@ dialog:not([open]) {
   transition: border-color 0.3s ease;
 }
 
+.button-animation {
+  transition: box-shadow 0.3s ease;
+}
+
 .button-animation:focus {
   outline: none;
   box-shadow: 2px 2px 0 #000;
-  transition: box-shadow 0.3s ease;
 }
 
 .button-animation::before {
